@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="snfdbxp" Class="UsersDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=snfdbxp;User ID=NeYu" SettingsObjectName="SNFxp.My.MySettings" SettingsPropertyName="snfdbxpConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Role_User" Member="Users" ThisKey="RoleID" OtherKey="RoleID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BranchID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Role_User" Member="Role" ThisKey="RoleID" OtherKey="RoleID" Type="Role" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Branch_User" Member="Branch" ThisKey="BranchID" OtherKey="BranchID" Type="Branch" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Branch" Member="Branches">
+    <Type Name="Branch">
+      <Column Name="BranchID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BranchName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ContactNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Branch_User" Member="Users" ThisKey="BranchID" OtherKey="BranchID" Type="User" />
+    </Type>
+  </Table>
+</Database>
