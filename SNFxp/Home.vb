@@ -2,6 +2,9 @@
     Private myuser As New Role
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' MsgBox(getUserRole().RoleName)
+        'Me.Text.("Home - " & getCurrentBranch.BranchName)
+        Me.Text = "Home - " & getCurrentBranch.BranchName
+        Me.tbBranchName.Text = getCurrentBranch.BranchName
     End Sub
 
 
@@ -103,4 +106,6 @@
         SingleFormClass.prodForm.Show()
         SingleFormClass.prodForm.Focus()
     End Sub
+
+
 End Class

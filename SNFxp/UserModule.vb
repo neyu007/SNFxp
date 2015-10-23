@@ -9,7 +9,10 @@
     Private areaID As Integer = 0
     Private termID As Integer = 0
     Private truckID As Integer = 0
-
+    Public isNewTerm As Boolean = False
+    Public editTermID As Integer = -1
+    Public isNewArea As Boolean = False
+    Public editAreaID As Integer = -1
 
     Function getLoggedUser() As User
 

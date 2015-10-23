@@ -381,6 +381,8 @@ Partial Class NewCustomerForm
         '
         'TermsIDComboBox
         '
+        Me.TermsIDComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.TermsIDComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.TermsIDComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CustomersBindingSource, "TermsID", True))
         Me.TermsIDComboBox.DataSource = Me.TermsBindingSource
         Me.TermsIDComboBox.DisplayMember = "Term"
@@ -398,6 +400,8 @@ Partial Class NewCustomerForm
         '
         'AreaIDComboBox
         '
+        Me.AreaIDComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.AreaIDComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.AreaIDComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CustomersBindingSource, "AreaID", True))
         Me.AreaIDComboBox.DataSource = Me.AreasBindingSource
         Me.AreaIDComboBox.DisplayMember = "AreaName"

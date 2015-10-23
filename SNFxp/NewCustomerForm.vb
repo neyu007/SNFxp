@@ -37,7 +37,6 @@
 
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-
         Me.Close()
     End Sub
 
@@ -47,7 +46,6 @@
             MsgBox("True")
         Else
             MsgBox("false")
-
         End If
     End Sub
     Private Function isValid() As Boolean
@@ -66,10 +64,17 @@
 
     Private Sub btnNewArea_Click(sender As Object, e As EventArgs) Handles btnNewArea.Click
         Dim newArea As New NewAreaForm
+        If AreaIDComboBox.SelectedIndex = -1 Then
+            UserModule.isNewArea = True
+        Else
+            UserModule.isNewArea = False
+            UserModule.editAreaID = AreaIDComboBox.SelectedValue
+        End If
         If newArea.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
             ' MsgBox("ok")
             Try
                 Me.AreasTableAdapter.FillByBranchID(Me.CustomersDataSet.Areas, branchID)
+                Me.AreaIDComboBox.SelectedValue = getCurrentAreaID()
             Catch ex As Exception
                 MsgBox(ex.ToString)
             End Try
@@ -80,15 +85,23 @@
    
     Private Sub btnNewTerm_Click(sender As Object, e As EventArgs) Handles btnNewTerm.Click
         Dim newTerm As New NewTermForm
+        If TermsIDComboBox.SelectedIndex = -1 Then
+            UserModule.isNewTerm = True
+        Else
+            UserModule.isNewTerm = False
+            UserModule.editTermID = TermsIDComboBox.SelectedValue
+        End If
         If newTerm.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
             ' MsgBox("ok")
 
             Try
                 Me.TermsTableAdapter.Fill(Me.CustomersDataSet.Terms)
+                Me.TermsIDComboBox.SelectedValue = getCurrentTermID()
             Catch ex As Exception
                 MsgBox(ex.ToString)
             End Try
       
         End If
     End Sub
+
 End Class

@@ -127,6 +127,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomersDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CustomersDataSet.vb">
+      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DepartmentNewForm.Designer.vb">
       <DependentUpon>DepartmentNewForm.vb</DependentUpon>
     </Compile>
@@ -309,6 +312,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TermsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TestForm.Designer.vb">
+      <DependentUpon>TestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TestReportForm.Designer.vb">
       <DependentUpon>TestReportForm.vb</DependentUpon>
     </Compile>
@@ -332,6 +341,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersDataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="ValidationsModule.vb" />
     <Compile Include="ViewProdList.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -417,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesInvoice.resx">
       <DependentUpon>SalesInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestReport.rdlc" />
     <EmbeddedResource Include="TestReportForm.resx">

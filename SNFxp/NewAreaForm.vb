@@ -6,8 +6,6 @@ Public Class NewAreaForm
     Dim conn As SqlConnection
     Dim areaName, town, province, city As String
 
-
-
     Private Sub AreasBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.AreasBindingSource.EndEdit()
@@ -18,6 +16,12 @@ Public Class NewAreaForm
         Try
             'TODO: This line of code loads data into the 'CustomersDataSet.Branch' table. You can move, or remove it, as needed.
             Me.BranchTableAdapter.FillByBranchID(Me.CustomersDataSet.Branch, branchID)
+            If UserModule.isNewArea Then
+                Me.AreasTableAdapter.Fill(Me.CustomersDataSet.Areas)
+                Me.AreasBindingSource.AddNew()
+            Else
+                Me.AreasTableAdapter.FillByAreaID(Me.CustomersDataSet.Areas, editAreaID)
+            End If
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -30,12 +34,17 @@ Public Class NewAreaForm
         town = TownTextBox.Text
         province = ProvinceTextBox.Text
         city = CityTextBox.Text
-        If Me.isValid() Then
-            If btnSaveClose.DialogResult = Windows.Forms.DialogResult.OK Then
-                InsertArea()
-            End If
+        'If Me.isValid() Then
+        '    If btnSaveClose.DialogResult = Windows.Forms.DialogResult.OK Then
+        '        InsertArea()
+        '    End If
+        'Else
+        '    MsgBox("Invalid Input")
+        'End If
+        If UserModule.isNewArea Then
+            Me.InsertArea()
         Else
-            MsgBox("Invalid Input")
+            Me.UpdateArea()
         End If
 
     End Sub
@@ -87,19 +96,68 @@ Public Class NewAreaForm
         Return valid
 
     End Function
+    Private Sub updateArea()
+        Dim conString = My.Settings.Item("snfdbxpConnectionString")
+        conn = New SqlConnection(conString)
+        'conn = New SqlConnection("Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\SNFDatabase.mdf;Initial Catalog=snfdbxp;Integrated Security=True")
+
+
+        Try
+            conn.Open()
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = String.Format("UPDATE Areas SET " &
+                                      "AreaName='{0}', " &
+                                      "BranchID='{1}', " &
+                                      "Town='{2}' " &
+                                      "Province='{3}', " &
+                                      "City='{4}', " &
+                                      "WHERE AreaID='{5}'",
+                                      areaName,
+                                      branchID,
+                                      town,
+                                      province,
+                                      city,
+                                      UserModule.editAreaID)
+
+            'Dim createdObj As Object = cmd.ExecuteScalar()
+
+
+            Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+            If rowsAffected > 0 Then
+                MsgBox("Success")
+            Else
+                MsgBox("Fail")
+            End If
+            setCurrentTermID(UserModule.editTermID)
+            conn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
     End Sub
 #End Region
     
-#Region "TextBoxChanged"
-    Private Sub AreaNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles AreaNameTextBox.TextChanged
-        If Me.AreaNameTextBox.Text.Count > 0 And
-            Not Me.AreaNameTextBox.Text.StartsWith(" ") Then
-            btnSaveClose.DialogResult = Windows.Forms.DialogResult.OK
+    '#Region "TextBoxChanged"
+    '    Private Sub AreaNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles AreaNameTextBox.TextChanged
+    '        If Me.AreaNameTextBox.Text.Count > 0 And
+    '            Not Me.AreaNameTextBox.Text.StartsWith(" ") Then
+    '            btnSaveClose.DialogResult = Windows.Forms.DialogResult.OK
+    '        End If
+    '    End Sub
+    '#End Region
+    
+
+    Private Sub AreaNameTextBox_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) _
+        Handles AreaNameTextBox.Validating, CityTextBox.Validating, ProvinceTextBox.Validating, TownTextBox.Validating
+        Dim txtBox = CType(sender, TextBox)
+        If Not ValidationsModule.isValidName(txtBox.Text) Then
+            MsgBox("Invalid Input")
+            txtBox.Focus()
+            'Me.TermTextBox.Focus()
         End If
     End Sub
-#End Region
-    
 End Class

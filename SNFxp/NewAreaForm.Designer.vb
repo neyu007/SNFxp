@@ -190,6 +190,7 @@ Partial Class NewAreaForm
         '
         'btnSaveClose
         '
+        Me.btnSaveClose.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnSaveClose.Location = New System.Drawing.Point(244, 246)
         Me.btnSaveClose.Name = "btnSaveClose"
         Me.btnSaveClose.Size = New System.Drawing.Size(75, 37)
@@ -199,6 +200,8 @@ Partial Class NewAreaForm
         '
         'btnCancel
         '
+        Me.btnCancel.CausesValidation = False
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(128, 246)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 37)
@@ -228,6 +231,8 @@ Partial Class NewAreaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
+        Me.CausesValidation = False
         Me.ClientSize = New System.Drawing.Size(440, 338)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnCancel)

@@ -28,21 +28,21 @@ Partial Class NewTermForm
         Dim DescriptionLabel As System.Windows.Forms.Label
         Dim DaysDueLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewTermForm))
-        Me.TermsDataSet = New SNFxp.TermsDataSet()
-        Me.TermsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TermsTableAdapter = New SNFxp.TermsDataSetTableAdapters.TermsTableAdapter()
-        Me.TableAdapterManager = New SNFxp.TermsDataSetTableAdapters.TableAdapterManager()
         Me.TermTextBox = New System.Windows.Forms.TextBox()
+        Me.TermsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TermsDataSet = New SNFxp.TermsDataSet()
         Me.DescriptionTextBox = New System.Windows.Forms.TextBox()
         Me.DaysDueTextBox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.TermsTableAdapter = New SNFxp.TermsDataSetTableAdapters.TermsTableAdapter()
+        Me.TableAdapterManager = New SNFxp.TermsDataSetTableAdapters.TableAdapterManager()
         TermLabel = New System.Windows.Forms.Label()
         DescriptionLabel = New System.Windows.Forms.Label()
         DaysDueLabel = New System.Windows.Forms.Label()
-        CType(Me.TermsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TermsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TermsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TermLabel
@@ -72,33 +72,23 @@ Partial Class NewTermForm
         DaysDueLabel.TabIndex = 7
         DaysDueLabel.Text = "Days Due:"
         '
-        'TermsDataSet
-        '
-        Me.TermsDataSet.DataSetName = "TermsDataSet"
-        Me.TermsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TermsBindingSource
-        '
-        Me.TermsBindingSource.DataMember = "Terms"
-        Me.TermsBindingSource.DataSource = Me.TermsDataSet
-        '
-        'TermsTableAdapter
-        '
-        Me.TermsTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.TermsTableAdapter = Me.TermsTableAdapter
-        Me.TableAdapterManager.UpdateOrder = SNFxp.TermsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'TermTextBox
         '
         Me.TermTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.TermsBindingSource, "Term", True))
         Me.TermTextBox.Location = New System.Drawing.Point(101, 55)
         Me.TermTextBox.Name = "TermTextBox"
         Me.TermTextBox.Size = New System.Drawing.Size(147, 20)
-        Me.TermTextBox.TabIndex = 4
+        Me.TermTextBox.TabIndex = 1
+        '
+        'TermsBindingSource
+        '
+        Me.TermsBindingSource.DataMember = "Terms"
+        Me.TermsBindingSource.DataSource = Me.TermsDataSet
+        '
+        'TermsDataSet
+        '
+        Me.TermsDataSet.DataSetName = "TermsDataSet"
+        Me.TermsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DescriptionTextBox
         '
@@ -107,7 +97,7 @@ Partial Class NewTermForm
         Me.DescriptionTextBox.Multiline = True
         Me.DescriptionTextBox.Name = "DescriptionTextBox"
         Me.DescriptionTextBox.Size = New System.Drawing.Size(147, 45)
-        Me.DescriptionTextBox.TabIndex = 6
+        Me.DescriptionTextBox.TabIndex = 3
         '
         'DaysDueTextBox
         '
@@ -115,7 +105,7 @@ Partial Class NewTermForm
         Me.DaysDueTextBox.Location = New System.Drawing.Point(101, 84)
         Me.DaysDueTextBox.Name = "DaysDueTextBox"
         Me.DaysDueTextBox.Size = New System.Drawing.Size(147, 20)
-        Me.DaysDueTextBox.TabIndex = 8
+        Me.DaysDueTextBox.TabIndex = 2
         '
         'Label1
         '
@@ -129,6 +119,7 @@ Partial Class NewTermForm
         '
         'btnSave
         '
+        Me.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnSave.Location = New System.Drawing.Point(173, 180)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
@@ -138,6 +129,8 @@ Partial Class NewTermForm
         '
         'btnCancel
         '
+        Me.btnCancel.CausesValidation = False
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(80, 180)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
@@ -145,10 +138,22 @@ Partial Class NewTermForm
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
+        'TermsTableAdapter
+        '
+        Me.TermsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.TermsTableAdapter = Me.TermsTableAdapter
+        Me.TableAdapterManager.UpdateOrder = SNFxp.TermsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'NewTermForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
+        Me.CausesValidation = False
         Me.ClientSize = New System.Drawing.Size(299, 241)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSave)
@@ -163,8 +168,8 @@ Partial Class NewTermForm
         Me.Name = "NewTermForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Terms"
-        CType(Me.TermsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TermsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TermsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

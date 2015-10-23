@@ -61,6 +61,10 @@ Partial Class Home
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnCustomersList = New System.Windows.Forms.Button()
         Me.btnAddCustomer = New System.Windows.Forms.Button()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.tbBranchName = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -68,6 +72,8 @@ Partial Class Home
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel7.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnProducts
@@ -251,7 +257,7 @@ Partial Class Home
         Me.Panel1.Controls.Add(Me.btnShipments)
         Me.Panel1.Controls.Add(Me.btnMonthlyInventory)
         Me.Panel1.Controls.Add(Me.btnTransmittal)
-        Me.Panel1.Location = New System.Drawing.Point(91, 189)
+        Me.Panel1.Location = New System.Drawing.Point(91, 238)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(138, 258)
         Me.Panel1.TabIndex = 6
@@ -283,7 +289,7 @@ Partial Class Home
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.btnProducts)
         Me.Panel2.Controls.Add(Me.btnProductList)
-        Me.Panel2.Location = New System.Drawing.Point(92, 57)
+        Me.Panel2.Location = New System.Drawing.Point(92, 106)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(137, 107)
         Me.Panel2.TabIndex = 7
@@ -346,7 +352,7 @@ Partial Class Home
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.btnFindInvoice)
         Me.Panel3.Controls.Add(Me.btnNewInvoice)
-        Me.Panel3.Location = New System.Drawing.Point(255, 57)
+        Me.Panel3.Location = New System.Drawing.Point(255, 106)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(195, 108)
         Me.Panel3.TabIndex = 8
@@ -371,7 +377,7 @@ Partial Class Home
         Me.Panel4.Controls.Add(Me.Button8)
         Me.Panel4.Controls.Add(Me.Button6)
         Me.Panel4.Controls.Add(Me.Button7)
-        Me.Panel4.Location = New System.Drawing.Point(252, 190)
+        Me.Panel4.Location = New System.Drawing.Point(252, 239)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(198, 255)
         Me.Panel4.TabIndex = 9
@@ -397,7 +403,7 @@ Partial Class Home
         Me.Panel5.Controls.Add(Me.btnModify)
         Me.Panel5.Controls.Add(Me.Button2)
         Me.Panel5.Controls.Add(Me.btnUserList)
-        Me.Panel5.Location = New System.Drawing.Point(471, 189)
+        Me.Panel5.Location = New System.Drawing.Point(471, 238)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(199, 256)
         Me.Panel5.TabIndex = 10
@@ -419,7 +425,7 @@ Partial Class Home
         Me.Panel7.Controls.Add(Me.Label7)
         Me.Panel7.Controls.Add(Me.btnCustomersList)
         Me.Panel7.Controls.Add(Me.btnAddCustomer)
-        Me.Panel7.Location = New System.Drawing.Point(471, 57)
+        Me.Panel7.Location = New System.Drawing.Point(471, 106)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(199, 108)
         Me.Panel7.TabIndex = 10
@@ -452,11 +458,61 @@ Partial Class Home
         Me.btnAddCustomer.Text = "Add Customer"
         Me.btnAddCustomer.UseVisualStyleBackColor = True
         '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.TextBox1)
+        Me.Panel8.Controls.Add(Me.tbBranchName)
+        Me.Panel8.Controls.Add(Me.PictureBox1)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(0, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(786, 81)
+        Me.Panel8.TabIndex = 11
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox1.Image = Global.SNFxp.My.Resources.Resources.SNF_Logo
+        Me.PictureBox1.Location = New System.Drawing.Point(347, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(62, 27)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
+        'tbBranchName
+        '
+        Me.tbBranchName.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.tbBranchName.BackColor = System.Drawing.SystemColors.Control
+        Me.tbBranchName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tbBranchName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbBranchName.Location = New System.Drawing.Point(3, 51)
+        Me.tbBranchName.Name = "tbBranchName"
+        Me.tbBranchName.ReadOnly = True
+        Me.tbBranchName.Size = New System.Drawing.Size(759, 19)
+        Me.tbBranchName.TabIndex = 5
+        Me.tbBranchName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(2, 31)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(759, 19)
+        Me.TextBox1.TabIndex = 6
+        Me.TextBox1.Text = "SAN NICOLAS FOOD CORPORATION"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(786, 510)
+        Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
@@ -481,6 +537,9 @@ Partial Class Home
         Me.Panel5.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -522,4 +581,8 @@ Partial Class Home
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btnAddCustomer As System.Windows.Forms.Button
     Friend WithEvents btnCustomersList As System.Windows.Forms.Button
+    Friend WithEvents Panel8 As System.Windows.Forms.Panel
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents tbBranchName As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 End Class
