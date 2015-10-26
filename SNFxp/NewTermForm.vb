@@ -20,6 +20,16 @@ Public Class NewTermForm
             Me.TermsBindingSource.AddNew()
         Else
             Me.TermsTableAdapter.FillByTermID(Me.TermsDataSet.Terms, UserModule.editTermID)
+            'Try
+            '    Dim dr = Me.TermsTableAdapter.GetData()
+            '    If dr.Count > 0 Then
+            '        Dim desc2 As String = dr(0).Description
+            '        MsgBox(desc2)
+            '    End If
+            'Catch ex As Exception
+            '    MsgBox(ex.Message)
+            'End Try          
+
         End If
        
     End Sub
