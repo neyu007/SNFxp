@@ -1,6 +1,8 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
+Imports System.Security.Cryptography
+Imports System.Text
 
 Public Class UserNewForm
 
@@ -10,6 +12,12 @@ Public Class UserNewForm
     Private role As Integer
     Private branch As Integer
     Dim conn As SqlConnection
+    'Dim strText As String
+    Dim bytHashedData As Byte()
+    Dim encoder As New UTF8Encoding()
+    Dim md5Hasher As New MD5CryptoServiceProvider
+
+
 
     Private Sub UserNewForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'SNFDatabaseDataSet.Branch' table. You can move, or remove it, as needed.
@@ -25,6 +33,8 @@ Public Class UserNewForm
         password = tbPassword.Text
         role = cbRole.SelectedValue
         branch = cbBranch.SelectedValue
+        bytHashedData = md5Hasher.ComputeHash(encoder.GetBytes(password))
+
 
         Dim conString = My.Settings.Item("snfdbxpConnectionString")
         conn = New SqlConnection(conString)
@@ -35,7 +45,7 @@ Public Class UserNewForm
         cmd.CommandText = String.Format("INSERT INTO Users(Username, Password, RoleID, BranchID)" &
                                         "VALUES('{0}', '{1}', '{2}', '{3}')",
                                         username,
-                                        password,
+                                        Convert.ToBase64String(bytHashedData),
                                         role,
                                         branch)
         Dim rowsAffected As Integer = cmd.ExecuteNonQuery()

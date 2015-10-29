@@ -30,6 +30,7 @@ Partial Class Login
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.linkUnlock = New System.Windows.Forms.LinkLabel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -94,12 +95,24 @@ Partial Class Login
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
+        'linkUnlock
+        '
+        Me.linkUnlock.AutoSize = True
+        Me.linkUnlock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.linkUnlock.Location = New System.Drawing.Point(9, 9)
+        Me.linkUnlock.Name = "linkUnlock"
+        Me.linkUnlock.Size = New System.Drawing.Size(74, 24)
+        Me.linkUnlock.TabIndex = 5
+        Me.linkUnlock.TabStop = True
+        Me.linkUnlock.Text = "Unlock"
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(399, 220)
+        Me.Controls.Add(Me.linkUnlock)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnLogin)
@@ -125,5 +138,6 @@ Partial Class Login
     Friend WithEvents btnLogin As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents linkUnlock As System.Windows.Forms.LinkLabel
 
 End Class

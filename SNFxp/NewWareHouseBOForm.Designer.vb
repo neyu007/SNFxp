@@ -38,6 +38,13 @@ Partial Class NewWareHouseBOForm
         Me.SalesAgentDataSet = New SNFxp.SalesAgentDataSet()
         Me.WarehouseBOLineItemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WarehouseBOLineItemsDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.ProductListBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LookupProductsDataSet = New SNFxp.LookupProductsDataSet()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductsDataSet = New SNFxp.ProductsDataSet()
         Me.BranchTableAdapter = New SNFxp.SalesAgentDataSetTableAdapters.BranchTableAdapter()
@@ -49,14 +56,7 @@ Partial Class NewWareHouseBOForm
         Me.tbtotalQty = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.LookupProductsDataSet = New SNFxp.LookupProductsDataSet()
-        Me.ProductListBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductListTableAdapter = New SNFxp.LookupProductsDataSetTableAdapters.ProductListTableAdapter()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         DateLabel = New System.Windows.Forms.Label()
         BranchIDLabel = New System.Windows.Forms.Label()
         CType(Me.WarehouseBODataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,10 +65,10 @@ Partial Class NewWareHouseBOForm
         CType(Me.SalesAgentDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WarehouseBOLineItemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WarehouseBOLineItemsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LookupProductsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookupProductsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DateLabel
@@ -85,9 +85,9 @@ Partial Class NewWareHouseBOForm
         BranchIDLabel.AutoSize = True
         BranchIDLabel.Location = New System.Drawing.Point(360, 54)
         BranchIDLabel.Name = "BranchIDLabel"
-        BranchIDLabel.Size = New System.Drawing.Size(58, 13)
+        BranchIDLabel.Size = New System.Drawing.Size(44, 13)
         BranchIDLabel.TabIndex = 5
-        BranchIDLabel.Text = "Branch ID:"
+        BranchIDLabel.Text = "Branch:"
         '
         'WarehouseBODataSet
         '
@@ -157,8 +157,56 @@ Partial Class NewWareHouseBOForm
         Me.WarehouseBOLineItemsDataGridView.DataSource = Me.WarehouseBOLineItemsBindingSource
         Me.WarehouseBOLineItemsDataGridView.Location = New System.Drawing.Point(25, 96)
         Me.WarehouseBOLineItemsDataGridView.Name = "WarehouseBOLineItemsDataGridView"
-        Me.WarehouseBOLineItemsDataGridView.Size = New System.Drawing.Size(644, 237)
+        Me.WarehouseBOLineItemsDataGridView.Size = New System.Drawing.Size(744, 237)
         Me.WarehouseBOLineItemsDataGridView.TabIndex = 7
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "ProductID"
+        Me.DataGridViewTextBoxColumn3.DataSource = Me.ProductListBindingSource
+        Me.DataGridViewTextBoxColumn3.DisplayMember = "ProductName"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Product"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.DataGridViewTextBoxColumn3.ValueMember = "ProductID"
+        Me.DataGridViewTextBoxColumn3.Width = 200
+        '
+        'ProductListBindingSource
+        '
+        Me.ProductListBindingSource.DataMember = "ProductList"
+        Me.ProductListBindingSource.DataSource = Me.LookupProductsDataSet
+        '
+        'LookupProductsDataSet
+        '
+        Me.LookupProductsDataSet.DataSetName = "LookupProductsDataSet"
+        Me.LookupProductsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Quantity"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Quantity"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.Width = 50
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Amount"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Amount"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ExpireDate"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "ExpireDate"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Remarks"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Remarks"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.Width = 250
         '
         'ProductsBindingSource
         '
@@ -210,7 +258,7 @@ Partial Class NewWareHouseBOForm
         Me.TextBox2.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(28, 13)
+        Me.TextBox2.Location = New System.Drawing.Point(76, 13)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(640, 19)
@@ -243,64 +291,16 @@ Partial Class NewWareHouseBOForm
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Total Quantity:"
         '
-        'LookupProductsDataSet
-        '
-        Me.LookupProductsDataSet.DataSetName = "LookupProductsDataSet"
-        Me.LookupProductsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ProductListBindingSource
-        '
-        Me.ProductListBindingSource.DataMember = "ProductList"
-        Me.ProductListBindingSource.DataSource = Me.LookupProductsDataSet
-        '
         'ProductListTableAdapter
         '
         Me.ProductListTableAdapter.ClearBeforeFill = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "ProductID"
-        Me.DataGridViewTextBoxColumn3.DataSource = Me.ProductListBindingSource
-        Me.DataGridViewTextBoxColumn3.DisplayMember = "ProductName"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "ProductID"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.DataGridViewTextBoxColumn3.ValueMember = "ProductID"
-        Me.DataGridViewTextBoxColumn3.Width = 150
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Quantity"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Quantity"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Width = 50
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Amount"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Amount"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "ExpireDate"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "ExpireDate"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Remarks"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Remarks"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.Width = 200
         '
         'NewWareHouseBOForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
-        Me.ClientSize = New System.Drawing.Size(693, 463)
+        Me.ClientSize = New System.Drawing.Size(788, 463)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.tbtotalQty)
@@ -323,10 +323,10 @@ Partial Class NewWareHouseBOForm
         CType(Me.SalesAgentDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WarehouseBOLineItemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WarehouseBOLineItemsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LookupProductsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookupProductsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -353,12 +353,12 @@ Partial Class NewWareHouseBOForm
     Friend WithEvents tbtotalQty As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents ProductListBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents LookupProductsDataSet As SNFxp.LookupProductsDataSet
+    Friend WithEvents ProductListTableAdapter As SNFxp.LookupProductsDataSetTableAdapters.ProductListTableAdapter
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ProductListTableAdapter As SNFxp.LookupProductsDataSetTableAdapters.ProductListTableAdapter
 End Class

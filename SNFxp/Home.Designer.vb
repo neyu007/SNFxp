@@ -62,9 +62,10 @@ Partial Class Home
         Me.btnCustomersList = New System.Windows.Forms.Button()
         Me.btnAddCustomer = New System.Windows.Forms.Button()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.tbBranchName = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbBranchName = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnLogout = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -150,7 +151,7 @@ Partial Class Home
         '
         'btnSalesAgent
         '
-        Me.btnSalesAgent.Location = New System.Drawing.Point(18, 212)
+        Me.btnSalesAgent.Location = New System.Drawing.Point(18, 193)
         Me.btnSalesAgent.Name = "btnSalesAgent"
         Me.btnSalesAgent.Size = New System.Drawing.Size(165, 23)
         Me.btnSalesAgent.TabIndex = 0
@@ -159,7 +160,7 @@ Partial Class Home
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(18, 168)
+        Me.Button3.Location = New System.Drawing.Point(18, 161)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(165, 23)
         Me.Button3.TabIndex = 0
@@ -168,7 +169,7 @@ Partial Class Home
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(18, 135)
+        Me.Button2.Location = New System.Drawing.Point(18, 132)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(165, 23)
         Me.Button2.TabIndex = 0
@@ -177,7 +178,7 @@ Partial Class Home
         '
         'btnUserList
         '
-        Me.btnUserList.Location = New System.Drawing.Point(18, 102)
+        Me.btnUserList.Location = New System.Drawing.Point(18, 100)
         Me.btnUserList.Name = "btnUserList"
         Me.btnUserList.Size = New System.Drawing.Size(165, 23)
         Me.btnUserList.TabIndex = 0
@@ -396,6 +397,7 @@ Partial Class Home
         '
         Me.Panel5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.btnLogout)
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.btnSalesAgent)
         Me.Panel5.Controls.Add(Me.btnAddUser)
@@ -469,16 +471,19 @@ Partial Class Home
         Me.Panel8.Size = New System.Drawing.Size(786, 81)
         Me.Panel8.TabIndex = 11
         '
-        'PictureBox1
+        'TextBox1
         '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = Global.SNFxp.My.Resources.Resources.SNF_Logo
-        Me.PictureBox1.Location = New System.Drawing.Point(347, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(62, 27)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
+        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TextBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(2, 31)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(759, 19)
+        Me.TextBox1.TabIndex = 6
+        Me.TextBox1.Text = "SAN NICOLAS FOOD CORPORATION"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'tbBranchName
         '
@@ -493,19 +498,25 @@ Partial Class Home
         Me.tbBranchName.TabIndex = 5
         Me.tbBranchName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox1
+        'PictureBox1
         '
-        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(2, 31)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(759, 19)
-        Me.TextBox1.TabIndex = 6
-        Me.TextBox1.Text = "SAN NICOLAS FOOD CORPORATION"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox1.Image = Global.SNFxp.My.Resources.Resources.SNF_Logo
+        Me.PictureBox1.Location = New System.Drawing.Point(347, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(62, 27)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
+        'btnLogout
+        '
+        Me.btnLogout.Location = New System.Drawing.Point(18, 222)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(165, 23)
+        Me.btnLogout.TabIndex = 12
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.UseVisualStyleBackColor = True
         '
         'Home
         '
@@ -585,4 +596,5 @@ Partial Class Home
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents tbBranchName As System.Windows.Forms.TextBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents btnLogout As System.Windows.Forms.Button
 End Class

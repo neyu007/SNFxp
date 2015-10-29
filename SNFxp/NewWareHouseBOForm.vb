@@ -20,6 +20,8 @@
         Me.WareHouseBOInfoBindingSource.AddNew()
         Me.BranchIDComboBox.SelectedValue = branchID
         Me.DateDateTimePicker.Value = DateTime.Now
+        Me.WarehouseBOLineItemsDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
     End Sub
 
     Private Sub WarehouseBOLineItemsDataGridView_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles WarehouseBOLineItemsDataGridView.EditingControlShowing
@@ -31,5 +33,10 @@
             cb.AutoCompleteMode = AutoCompleteMode.Suggest
             cb.AutoCompleteSource = AutoCompleteSource.ListItems
         End If
+    End Sub
+
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
     End Sub
 End Class

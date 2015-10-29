@@ -108,4 +108,9 @@
     End Sub
 
 
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Dim login As New Login
+        login.Show()
+        Me.MdiParent.Close()
+    End Sub
 End Class
