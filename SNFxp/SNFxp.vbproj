@@ -136,6 +136,12 @@
     <Compile Include="DepartmentNewForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditUserForm.Designer.vb">
+      <DependentUpon>EditUserForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Enable.Designer.vb">
       <DependentUpon>Enable.vb</DependentUpon>
     </Compile>
@@ -373,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DepartmentNewForm.resx">
       <DependentUpon>DepartmentNewForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUserForm.resx">
+      <DependentUpon>EditUserForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Enable.resx">
       <DependentUpon>Enable.vb</DependentUpon>

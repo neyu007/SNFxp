@@ -24,7 +24,6 @@ Partial Class NewCustomerForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim CustomerIDLabel As System.Windows.Forms.Label
         Dim StoreNameLabel As System.Windows.Forms.Label
         Dim NameOfOwnerLabel As System.Windows.Forms.Label
         Dim AddressLabel As System.Windows.Forms.Label
@@ -38,20 +37,6 @@ Partial Class NewCustomerForm
         Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomersTableAdapter = New SNFxp.CustomersDataSetTableAdapters.CustomersTableAdapter()
         Me.TableAdapterManager = New SNFxp.CustomersDataSetTableAdapters.TableAdapterManager()
-        Me.CustomersBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.CustomersBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.CustomerIDTextBox = New System.Windows.Forms.TextBox()
         Me.NameOfOwnerTextBox = New System.Windows.Forms.TextBox()
         Me.AddressTextBox = New System.Windows.Forms.TextBox()
         Me.BranchIDComboBox = New System.Windows.Forms.ComboBox()
@@ -74,7 +59,6 @@ Partial Class NewCustomerForm
         Me.btnNewArea = New System.Windows.Forms.Button()
         Me.btnNewTerm = New System.Windows.Forms.Button()
         Me.StoreNameTextBox = New System.Windows.Forms.TextBox()
-        CustomerIDLabel = New System.Windows.Forms.Label()
         StoreNameLabel = New System.Windows.Forms.Label()
         NameOfOwnerLabel = New System.Windows.Forms.Label()
         AddressLabel = New System.Windows.Forms.Label()
@@ -85,27 +69,16 @@ Partial Class NewCustomerForm
         AreaIDLabel = New System.Windows.Forms.Label()
         CType(Me.CustomersDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CustomersBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.CustomersBindingNavigator.SuspendLayout()
         CType(Me.BranchBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PriceLevelBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TermsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AreasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'CustomerIDLabel
-        '
-        CustomerIDLabel.AutoSize = True
-        CustomerIDLabel.Location = New System.Drawing.Point(18, 98)
-        CustomerIDLabel.Name = "CustomerIDLabel"
-        CustomerIDLabel.Size = New System.Drawing.Size(68, 13)
-        CustomerIDLabel.TabIndex = 1
-        CustomerIDLabel.Text = "Customer ID:"
-        '
         'StoreNameLabel
         '
         StoreNameLabel.AutoSize = True
-        StoreNameLabel.Location = New System.Drawing.Point(18, 124)
+        StoreNameLabel.Location = New System.Drawing.Point(16, 93)
         StoreNameLabel.Name = "StoreNameLabel"
         StoreNameLabel.Size = New System.Drawing.Size(66, 13)
         StoreNameLabel.TabIndex = 3
@@ -114,7 +87,7 @@ Partial Class NewCustomerForm
         'NameOfOwnerLabel
         '
         NameOfOwnerLabel.AutoSize = True
-        NameOfOwnerLabel.Location = New System.Drawing.Point(18, 150)
+        NameOfOwnerLabel.Location = New System.Drawing.Point(16, 119)
         NameOfOwnerLabel.Name = "NameOfOwnerLabel"
         NameOfOwnerLabel.Size = New System.Drawing.Size(86, 13)
         NameOfOwnerLabel.TabIndex = 5
@@ -123,7 +96,7 @@ Partial Class NewCustomerForm
         'AddressLabel
         '
         AddressLabel.AutoSize = True
-        AddressLabel.Location = New System.Drawing.Point(18, 205)
+        AddressLabel.Location = New System.Drawing.Point(16, 174)
         AddressLabel.Name = "AddressLabel"
         AddressLabel.Size = New System.Drawing.Size(48, 13)
         AddressLabel.TabIndex = 7
@@ -132,7 +105,7 @@ Partial Class NewCustomerForm
         'BranchIDLabel
         '
         BranchIDLabel.AutoSize = True
-        BranchIDLabel.Location = New System.Drawing.Point(365, 124)
+        BranchIDLabel.Location = New System.Drawing.Point(363, 93)
         BranchIDLabel.Name = "BranchIDLabel"
         BranchIDLabel.Size = New System.Drawing.Size(58, 13)
         BranchIDLabel.TabIndex = 9
@@ -141,7 +114,7 @@ Partial Class NewCustomerForm
         'PriceLevelIDLabel
         '
         PriceLevelIDLabel.AutoSize = True
-        PriceLevelIDLabel.Location = New System.Drawing.Point(365, 152)
+        PriceLevelIDLabel.Location = New System.Drawing.Point(363, 121)
         PriceLevelIDLabel.Name = "PriceLevelIDLabel"
         PriceLevelIDLabel.Size = New System.Drawing.Size(77, 13)
         PriceLevelIDLabel.TabIndex = 11
@@ -150,7 +123,7 @@ Partial Class NewCustomerForm
         'RemarksLabel
         '
         RemarksLabel.AutoSize = True
-        RemarksLabel.Location = New System.Drawing.Point(365, 207)
+        RemarksLabel.Location = New System.Drawing.Point(363, 176)
         RemarksLabel.Name = "RemarksLabel"
         RemarksLabel.Size = New System.Drawing.Size(52, 13)
         RemarksLabel.TabIndex = 13
@@ -159,7 +132,7 @@ Partial Class NewCustomerForm
         'TermsIDLabel
         '
         TermsIDLabel.AutoSize = True
-        TermsIDLabel.Location = New System.Drawing.Point(365, 181)
+        TermsIDLabel.Location = New System.Drawing.Point(363, 150)
         TermsIDLabel.Name = "TermsIDLabel"
         TermsIDLabel.Size = New System.Drawing.Size(53, 13)
         TermsIDLabel.TabIndex = 15
@@ -168,7 +141,7 @@ Partial Class NewCustomerForm
         'AreaIDLabel
         '
         AreaIDLabel.AutoSize = True
-        AreaIDLabel.Location = New System.Drawing.Point(20, 176)
+        AreaIDLabel.Location = New System.Drawing.Point(18, 145)
         AreaIDLabel.Name = "AreaIDLabel"
         AreaIDLabel.Size = New System.Drawing.Size(46, 13)
         AreaIDLabel.TabIndex = 17
@@ -198,132 +171,10 @@ Partial Class NewCustomerForm
         Me.TableAdapterManager.TermsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = SNFxp.CustomersDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'CustomersBindingNavigator
-        '
-        Me.CustomersBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.CustomersBindingNavigator.BindingSource = Me.CustomersBindingSource
-        Me.CustomersBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.CustomersBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.CustomersBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.CustomersBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.CustomersBindingNavigatorSaveItem})
-        Me.CustomersBindingNavigator.Location = New System.Drawing.Point(0, 344)
-        Me.CustomersBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.CustomersBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.CustomersBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.CustomersBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.CustomersBindingNavigator.Name = "CustomersBindingNavigator"
-        Me.CustomersBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.CustomersBindingNavigator.Size = New System.Drawing.Size(677, 25)
-        Me.CustomersBindingNavigator.TabIndex = 0
-        Me.CustomersBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveNextItem.Text = "Move next"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveLastItem.Text = "Move last"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'CustomersBindingNavigatorSaveItem
-        '
-        Me.CustomersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.CustomersBindingNavigatorSaveItem.Image = CType(resources.GetObject("CustomersBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.CustomersBindingNavigatorSaveItem.Name = "CustomersBindingNavigatorSaveItem"
-        Me.CustomersBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.CustomersBindingNavigatorSaveItem.Text = "Save Data"
-        '
-        'CustomerIDTextBox
-        '
-        Me.CustomerIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomersBindingSource, "CustomerID", True))
-        Me.CustomerIDTextBox.Location = New System.Drawing.Point(110, 95)
-        Me.CustomerIDTextBox.Name = "CustomerIDTextBox"
-        Me.CustomerIDTextBox.ReadOnly = True
-        Me.CustomerIDTextBox.Size = New System.Drawing.Size(121, 20)
-        Me.CustomerIDTextBox.TabIndex = 2
-        Me.CustomerIDTextBox.TabStop = False
-        '
         'NameOfOwnerTextBox
         '
         Me.NameOfOwnerTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomersBindingSource, "NameOfOwner", True))
-        Me.NameOfOwnerTextBox.Location = New System.Drawing.Point(110, 147)
+        Me.NameOfOwnerTextBox.Location = New System.Drawing.Point(108, 116)
         Me.NameOfOwnerTextBox.Name = "NameOfOwnerTextBox"
         Me.NameOfOwnerTextBox.Size = New System.Drawing.Size(218, 20)
         Me.NameOfOwnerTextBox.TabIndex = 2
@@ -331,7 +182,7 @@ Partial Class NewCustomerForm
         'AddressTextBox
         '
         Me.AddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomersBindingSource, "Address", True))
-        Me.AddressTextBox.Location = New System.Drawing.Point(110, 202)
+        Me.AddressTextBox.Location = New System.Drawing.Point(108, 171)
         Me.AddressTextBox.Multiline = True
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(218, 43)
@@ -343,7 +194,7 @@ Partial Class NewCustomerForm
         Me.BranchIDComboBox.DisplayMember = "BranchName"
         Me.BranchIDComboBox.FormattingEnabled = True
         Me.BranchIDComboBox.ItemHeight = 13
-        Me.BranchIDComboBox.Location = New System.Drawing.Point(457, 121)
+        Me.BranchIDComboBox.Location = New System.Drawing.Point(455, 90)
         Me.BranchIDComboBox.Name = "BranchIDComboBox"
         Me.BranchIDComboBox.Size = New System.Drawing.Size(191, 21)
         Me.BranchIDComboBox.TabIndex = 5
@@ -359,7 +210,7 @@ Partial Class NewCustomerForm
         Me.PriceLevelIDComboBox.DataSource = Me.PriceLevelBindingSource
         Me.PriceLevelIDComboBox.DisplayMember = "PriceLevelName"
         Me.PriceLevelIDComboBox.FormattingEnabled = True
-        Me.PriceLevelIDComboBox.Location = New System.Drawing.Point(457, 149)
+        Me.PriceLevelIDComboBox.Location = New System.Drawing.Point(455, 118)
         Me.PriceLevelIDComboBox.Name = "PriceLevelIDComboBox"
         Me.PriceLevelIDComboBox.Size = New System.Drawing.Size(191, 21)
         Me.PriceLevelIDComboBox.TabIndex = 6
@@ -373,7 +224,7 @@ Partial Class NewCustomerForm
         'RemarksTextBox
         '
         Me.RemarksTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomersBindingSource, "Remarks", True))
-        Me.RemarksTextBox.Location = New System.Drawing.Point(457, 205)
+        Me.RemarksTextBox.Location = New System.Drawing.Point(455, 174)
         Me.RemarksTextBox.Multiline = True
         Me.RemarksTextBox.Name = "RemarksTextBox"
         Me.RemarksTextBox.Size = New System.Drawing.Size(191, 40)
@@ -387,7 +238,7 @@ Partial Class NewCustomerForm
         Me.TermsIDComboBox.DataSource = Me.TermsBindingSource
         Me.TermsIDComboBox.DisplayMember = "Term"
         Me.TermsIDComboBox.FormattingEnabled = True
-        Me.TermsIDComboBox.Location = New System.Drawing.Point(457, 178)
+        Me.TermsIDComboBox.Location = New System.Drawing.Point(455, 147)
         Me.TermsIDComboBox.Name = "TermsIDComboBox"
         Me.TermsIDComboBox.Size = New System.Drawing.Size(155, 21)
         Me.TermsIDComboBox.TabIndex = 7
@@ -406,7 +257,7 @@ Partial Class NewCustomerForm
         Me.AreaIDComboBox.DataSource = Me.AreasBindingSource
         Me.AreaIDComboBox.DisplayMember = "AreaName"
         Me.AreaIDComboBox.FormattingEnabled = True
-        Me.AreaIDComboBox.Location = New System.Drawing.Point(112, 173)
+        Me.AreaIDComboBox.Location = New System.Drawing.Point(110, 142)
         Me.AreaIDComboBox.Name = "AreaIDComboBox"
         Me.AreaIDComboBox.Size = New System.Drawing.Size(181, 21)
         Me.AreaIDComboBox.TabIndex = 3
@@ -430,7 +281,7 @@ Partial Class NewCustomerForm
         '
         'btnSaveClose
         '
-        Me.btnSaveClose.Location = New System.Drawing.Point(544, 266)
+        Me.btnSaveClose.Location = New System.Drawing.Point(542, 235)
         Me.btnSaveClose.Name = "btnSaveClose"
         Me.btnSaveClose.Size = New System.Drawing.Size(104, 36)
         Me.btnSaveClose.TabIndex = 11
@@ -439,7 +290,7 @@ Partial Class NewCustomerForm
         '
         'btnSaveNew
         '
-        Me.btnSaveNew.Location = New System.Drawing.Point(434, 266)
+        Me.btnSaveNew.Location = New System.Drawing.Point(432, 235)
         Me.btnSaveNew.Name = "btnSaveNew"
         Me.btnSaveNew.Size = New System.Drawing.Size(104, 36)
         Me.btnSaveNew.TabIndex = 10
@@ -449,7 +300,7 @@ Partial Class NewCustomerForm
         'btnCancel
         '
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Location = New System.Drawing.Point(324, 266)
+        Me.btnCancel.Location = New System.Drawing.Point(322, 235)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(104, 36)
         Me.btnCancel.TabIndex = 9
@@ -474,7 +325,7 @@ Partial Class NewCustomerForm
         '
         'btnNewArea
         '
-        Me.btnNewArea.Location = New System.Drawing.Point(297, 172)
+        Me.btnNewArea.Location = New System.Drawing.Point(295, 141)
         Me.btnNewArea.Name = "btnNewArea"
         Me.btnNewArea.Size = New System.Drawing.Size(29, 23)
         Me.btnNewArea.TabIndex = 21
@@ -483,7 +334,7 @@ Partial Class NewCustomerForm
         '
         'btnNewTerm
         '
-        Me.btnNewTerm.Location = New System.Drawing.Point(619, 178)
+        Me.btnNewTerm.Location = New System.Drawing.Point(617, 147)
         Me.btnNewTerm.Name = "btnNewTerm"
         Me.btnNewTerm.Size = New System.Drawing.Size(29, 23)
         Me.btnNewTerm.TabIndex = 21
@@ -493,7 +344,7 @@ Partial Class NewCustomerForm
         'StoreNameTextBox
         '
         Me.StoreNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomersBindingSource, "StoreName", True))
-        Me.StoreNameTextBox.Location = New System.Drawing.Point(110, 121)
+        Me.StoreNameTextBox.Location = New System.Drawing.Point(108, 90)
         Me.StoreNameTextBox.Name = "StoreNameTextBox"
         Me.StoreNameTextBox.Size = New System.Drawing.Size(218, 20)
         Me.StoreNameTextBox.TabIndex = 1
@@ -504,15 +355,13 @@ Partial Class NewCustomerForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
         Me.CausesValidation = False
-        Me.ClientSize = New System.Drawing.Size(677, 369)
+        Me.ClientSize = New System.Drawing.Size(677, 317)
         Me.Controls.Add(Me.btnNewTerm)
         Me.Controls.Add(Me.btnNewArea)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSaveNew)
         Me.Controls.Add(Me.btnSaveClose)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(CustomerIDLabel)
-        Me.Controls.Add(Me.CustomerIDTextBox)
         Me.Controls.Add(StoreNameLabel)
         Me.Controls.Add(Me.StoreNameTextBox)
         Me.Controls.Add(NameOfOwnerLabel)
@@ -529,16 +378,12 @@ Partial Class NewCustomerForm
         Me.Controls.Add(Me.TermsIDComboBox)
         Me.Controls.Add(AreaIDLabel)
         Me.Controls.Add(Me.AreaIDComboBox)
-        Me.Controls.Add(Me.CustomersBindingNavigator)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NewCustomerForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Customer"
         CType(Me.CustomersDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CustomersBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CustomersBindingNavigator.ResumeLayout(False)
-        Me.CustomersBindingNavigator.PerformLayout()
         CType(Me.BranchBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PriceLevelBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TermsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -551,20 +396,6 @@ Partial Class NewCustomerForm
     Friend WithEvents CustomersBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents CustomersTableAdapter As SNFxp.CustomersDataSetTableAdapters.CustomersTableAdapter
     Friend WithEvents TableAdapterManager As SNFxp.CustomersDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents CustomersBindingNavigator As System.Windows.Forms.BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As System.Windows.Forms.ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents CustomersBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents CustomerIDTextBox As System.Windows.Forms.TextBox
     Friend WithEvents NameOfOwnerTextBox As System.Windows.Forms.TextBox
     Friend WithEvents AddressTextBox As System.Windows.Forms.TextBox
     Friend WithEvents BranchIDComboBox As System.Windows.Forms.ComboBox

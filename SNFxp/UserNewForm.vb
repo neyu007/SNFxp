@@ -85,6 +85,7 @@ Public Class UserNewForm
 
 
     Private Sub tbUsername_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles tbUsername.Validating
+
         username = tbUsername.Text
         Dim qCount As Integer = 0
         Dim userQuery = From u In userData.Users _
@@ -94,9 +95,9 @@ Public Class UserNewForm
         Try
             qCount = userQuery.Count
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
-        If String.IsNullOrEmpty(username) Then
+        If username.Length < 1 Then
             MessageBox.Show("Please supply Username fields.", _
                            "Entry Error", _
                                     MessageBoxButtons.OK, _
@@ -122,18 +123,18 @@ Public Class UserNewForm
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Me.RemoveValidation()
+        ' Me.RemoveValidation()
         Me.Close()
 
     End Sub
 
-    Private Sub RemoveValidation()
-        Me.tbUsername.CausesValidation = False
-        Me.tbPassword.CausesValidation = False
-        Me.tbConfirmPass.CausesValidation = False
-        Me.cbBranch.CausesValidation = False
-        Me.cbRole.CausesValidation = False
-    End Sub
+    'Private Sub RemoveValidation()
+    '    Me.tbUsername.CausesValidation = False
+    '    Me.tbPassword.CausesValidation = False
+    '    Me.tbConfirmPass.CausesValidation = False
+    '    Me.cbBranch.CausesValidation = False
+    '    Me.cbRole.CausesValidation = False
+    'End Sub
 
     Private Sub tbConfirmPass_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles tbConfirmPass.Validating
         password = tbPassword.Text
@@ -165,6 +166,18 @@ Public Class UserNewForm
                                 MessageBoxButtons.OK, _
                                 MessageBoxIcon.Exclamation)
             cbBranch.Focus()
+        End If
+    End Sub
+
+    Private Sub tbPassword_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles tbPassword.Validating
+        If (Me.tbPassword.Text.StartsWith(" ") Or Me.tbPassword.Text.Length < 1) Then
+            MsgBox("Invalid Input: New Password Field")
+            Me.tbPassword.Focus()
+        ElseIf Me.tbConfirmPass.TextLength > 0 And Not Me.tbPassword.Text.Equals(Me.tbConfirmPass.Text) Then
+            MsgBox("New password and password confirmation do not match.")
+        ElseIf Me.tbPassword.TextLength < 6 Then
+            MsgBox("Password must contain at least 6 characters.")
+            Me.tbPassword.Focus()
         End If
     End Sub
 End Class

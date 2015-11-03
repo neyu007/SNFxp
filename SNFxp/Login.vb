@@ -67,6 +67,7 @@ Public Class Login
     End Sub
 
     Private Function HandleRegistry() As Boolean
+        Dim returnVal As Boolean = False
         Dim SNFxpHash As String = ValidationsModule.GetHash("SNFxpHash")
         'MsgBox(SNFxpHash)
         'Dim Registered As Boolean = _
@@ -82,10 +83,12 @@ Public Class Login
         'MsgBox("Value: " & CStr(Registered))
         'Return Registered
         If My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\" & SNFxpHash, "Registered", Nothing) Is Nothing Then
-            Return False
+            returnVal = False
         ElseIf My.Computer.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\" & SNFxpHash, "Registered", Nothing) = True Then
-            Return True
+            returnVal = True
         End If
+
+        Return returnVal
     End Function
 
     Private Sub DisableButtons()

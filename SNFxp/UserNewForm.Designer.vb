@@ -185,7 +185,6 @@ Partial Class UserNewForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
-        Me.CancelButton = Me.btnCancel
         Me.CausesValidation = False
         Me.ClientSize = New System.Drawing.Size(378, 303)
         Me.Controls.Add(Me.btnCancel)
@@ -202,6 +201,7 @@ Partial Class UserNewForm
         Me.Controls.Add(Me.tbUsername)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "UserNewForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add User"
         CType(Me.RolesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SNFDatabaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()

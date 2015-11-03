@@ -13,6 +13,7 @@
     Public editTermID As Integer = -1
     Public isNewArea As Boolean = False
     Public editAreaID As Integer = -1
+    Private customerID As Integer = 0
 
     Function getLoggedUser() As User
 
@@ -83,4 +84,10 @@
         Return truckID
     End Function
 
+    Sub setCurrentCustomerID(myCustomerID As Integer)
+        customerID = myCustomerID
+    End Sub
+    Function getCurrentCustomerID() As Integer
+        Return customerID
+    End Function
 End Module

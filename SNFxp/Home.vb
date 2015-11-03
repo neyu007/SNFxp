@@ -113,4 +113,14 @@
         login.Show()
         Me.MdiParent.Close()
     End Sub
+
+
+    Private Sub btnUserList_Click(sender As Object, e As EventArgs) Handles btnUserList.Click
+        MsgBox("Not yet implemented.")
+    End Sub
+
+    Private Sub btnModify_Click(sender As Object, e As EventArgs) Handles btnModify.Click
+        Dim editPass As New EditUserForm
+        editPass.ShowDialog()
+    End Sub
 End Class

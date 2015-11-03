@@ -56,6 +56,7 @@ Partial Class Home
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnLogout = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -65,7 +66,6 @@ Partial Class Home
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.tbBranchName = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnLogout = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -182,7 +182,7 @@ Partial Class Home
         Me.btnUserList.Name = "btnUserList"
         Me.btnUserList.Size = New System.Drawing.Size(165, 23)
         Me.btnUserList.TabIndex = 0
-        Me.btnUserList.Text = "Modify Access Level"
+        Me.btnUserList.Text = "Edit Users"
         Me.btnUserList.UseVisualStyleBackColor = True
         '
         'btnModify
@@ -191,7 +191,7 @@ Partial Class Home
         Me.btnModify.Name = "btnModify"
         Me.btnModify.Size = New System.Drawing.Size(165, 23)
         Me.btnModify.TabIndex = 0
-        Me.btnModify.Text = "Edit Profile"
+        Me.btnModify.Text = "Change My Password"
         Me.btnModify.UseVisualStyleBackColor = True
         '
         'btnAddUser
@@ -410,6 +410,15 @@ Partial Class Home
         Me.Panel5.Size = New System.Drawing.Size(199, 256)
         Me.Panel5.TabIndex = 10
         '
+        'btnLogout
+        '
+        Me.btnLogout.Location = New System.Drawing.Point(18, 222)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(165, 23)
+        Me.btnLogout.TabIndex = 12
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.UseVisualStyleBackColor = True
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -508,15 +517,6 @@ Partial Class Home
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
-        '
-        'btnLogout
-        '
-        Me.btnLogout.Location = New System.Drawing.Point(18, 222)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(165, 23)
-        Me.btnLogout.TabIndex = 12
-        Me.btnLogout.Text = "Logout"
-        Me.btnLogout.UseVisualStyleBackColor = True
         '
         'Home
         '

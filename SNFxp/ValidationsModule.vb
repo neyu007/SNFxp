@@ -2,6 +2,11 @@
 Imports System.Text
 Module ValidationsModule
     Const salt As String = "SNFsalt"
+
+    Dim bytHashedData As Byte()
+    Dim encoder As New UTF8Encoding()
+    Dim md5Hasher As New MD5CryptoServiceProvider
+
     Function isValidName(ByVal myString As String) As Boolean
         Dim valid As Boolean = False
 
@@ -38,4 +43,17 @@ Module ValidationsModule
         ' return comparison
         Return String.Compare(newHash, hashedStr, StringComparison.InvariantCultureIgnoreCase)
     End Function
+
+    Function MyMD5Hasher(inputString As String) As String
+        bytHashedData = md5Hasher.ComputeHash(encoder.GetBytes(inputString))
+        Return Convert.ToBase64String(bytHashedData)
+    End Function
+    Function MyMD5Checker(inputString As String, inputString2 As String) As Boolean
+        Dim check As Boolean = False
+        If inputString.Equals(inputString2) Then
+            check = True
+        End If
+        Return check
+    End Function
+
 End Module
