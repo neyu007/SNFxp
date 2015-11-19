@@ -14,6 +14,7 @@
     Public isNewArea As Boolean = False
     Public editAreaID As Integer = -1
     Private customerID As Integer = 0
+    Public isNewInvoice As Boolean = False
 
     Function getLoggedUser() As User
 

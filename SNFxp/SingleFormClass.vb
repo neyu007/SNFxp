@@ -9,6 +9,7 @@
     Public Shared newAreaForm As NewAreaForm
     Public Shared newTermForm As NewTermForm
     Public Shared newWarehouseBOForm As NewWareHouseBOForm
+    Public Shared newInvoiceForm As NewInvoiceForm
 #End Region
 
 End Class

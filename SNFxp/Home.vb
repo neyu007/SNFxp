@@ -123,4 +123,14 @@
         Dim editPass As New EditUserForm
         editPass.ShowDialog()
     End Sub
+
+    Private Sub btnNewInvoice_Click(sender As Object, e As EventArgs) Handles btnNewInvoice.Click
+        UserModule.isNewInvoice = True
+        If SingleFormClass.newInvoiceForm Is Nothing Then
+            SingleFormClass.newInvoiceForm = New NewInvoiceForm
+        End If
+        SingleFormClass.newInvoiceForm.MdiParent = Me.MdiParent
+        SingleFormClass.newInvoiceForm.Show()
+        SingleFormClass.newInvoiceForm.Focus()
+    End Sub
 End Class

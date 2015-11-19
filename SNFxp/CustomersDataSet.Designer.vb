@@ -3829,7 +3829,7 @@ Namespace CustomersDataSetTableAdapters
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT        CustomerID, StoreName, NameOfOwner, Address, BranchID, PriceLevelID" & _
                 ", Remarks, TermsID, AreaID" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            Customers" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (BranchID = " & _
-                "@BranchID)"
+                "@BranchID)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY StoreName"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BranchID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "BranchID", Global.System.Data.DataRowVersion.Current, False, Nothing, "", "", ""))
         End Sub

@@ -90,9 +90,12 @@ Public Class NewCustomerForm
     Private Sub btnSaveClose_Click(sender As Object, e As EventArgs) Handles btnSaveClose.Click
         Me.ValidateChildren()
         If Me.isValid Then
-            MsgBox("True")
+            Me.CustomersBindingSource.EndEdit()
+            Me.TableAdapterManager.UpdateAll(Me.CustomersDataSet)
+            MsgBox("Success")
+            Me.Close()
         Else
-            MsgBox("false")
+            MsgBox("Incomplete input")
         End If
     End Sub
 

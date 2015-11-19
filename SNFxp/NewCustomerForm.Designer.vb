@@ -190,6 +190,7 @@ Partial Class NewCustomerForm
         '
         'BranchIDComboBox
         '
+        Me.BranchIDComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CustomersBindingSource, "BranchID", True))
         Me.BranchIDComboBox.DataSource = Me.BranchBindingSource
         Me.BranchIDComboBox.DisplayMember = "BranchName"
         Me.BranchIDComboBox.FormattingEnabled = True
@@ -207,6 +208,7 @@ Partial Class NewCustomerForm
         '
         'PriceLevelIDComboBox
         '
+        Me.PriceLevelIDComboBox.DataBindings.Add(New System.Windows.Forms.Binding("SelectedValue", Me.CustomersBindingSource, "PriceLevelID", True))
         Me.PriceLevelIDComboBox.DataSource = Me.PriceLevelBindingSource
         Me.PriceLevelIDComboBox.DisplayMember = "PriceLevelName"
         Me.PriceLevelIDComboBox.FormattingEnabled = True

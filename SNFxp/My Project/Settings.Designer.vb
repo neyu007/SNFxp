@@ -98,7 +98,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=.\SQLEXPRESS;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminn"& _ 
+            "eyu")>  _
         Public ReadOnly Property Setting() As String
             Get
                 Return CType(Me("Setting"),String)
