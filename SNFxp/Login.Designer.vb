@@ -87,7 +87,7 @@ Partial Class Login
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.SNFxp.My.Resources.Resources.SNF_Logo
+        Me.PictureBox1.Image = Global.SNFxp.My.Resources.Resources.snficon
         Me.PictureBox1.Location = New System.Drawing.Point(155, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 50)

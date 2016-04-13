@@ -1,6 +1,6 @@
 ﻿Public Class BranchNewForm
 
-    Private Sub BranchBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles BranchBindingNavigatorSaveItem.Click
+    Private Sub BranchBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.BranchBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.SNFDatabaseDataSet)
@@ -17,5 +17,9 @@
         Me.Validate()
         Me.BranchBindingSource.EndEdit()
         Me.BranchTableAdapter.Update(Me.SNFDatabaseDataSet.Branch)
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
     End Sub
 End Class

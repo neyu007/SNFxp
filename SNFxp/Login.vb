@@ -61,7 +61,8 @@ Public Class Login
 
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            'MsgBox(ex.ToString)
+            MsgBox("Invalid username or password")
         End Try
 
     End Sub

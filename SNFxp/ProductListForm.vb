@@ -61,9 +61,7 @@ Public Class ProductListForm
 
 
 
-    Private Sub ProductsBindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles ProductsBindingSource.CurrentChanged
 
-    End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Dim conString = My.Settings.Item("snfdbxpConnectionString")

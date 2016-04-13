@@ -10,15 +10,19 @@
 
 
     Private Sub btnProductList_Click(sender As Object, e As EventArgs) Handles btnProdList.Click
-        Dim prodList As New ProductListForm
-        prodList.MdiParent = Me.MdiParent
-        prodList.Show()
-        prodList.Focus()
+        'Dim prodList As New ProductListForm
+        'prodList.MdiParent = Me.MdiParent
+        'prodList.Show()
+        'prodList.Focus()
+        Dim testRp As New TestReportForm
+        testRp.Show()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click, Button8.Click, Button7.Click, Button6.Click
-        Dim testRp As New TestReportForm
-        testRp.Show()
+        'Dim testRp As New TestReportForm
+        'testRp.Show()
+        MsgBox("Currently Disabled")
+
     End Sub
 
     Private Sub btnAddUser_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
@@ -132,5 +136,34 @@
         SingleFormClass.newInvoiceForm.MdiParent = Me.MdiParent
         SingleFormClass.newInvoiceForm.Show()
         SingleFormClass.newInvoiceForm.Focus()
+    End Sub
+
+
+    Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
+
+        If SingleFormClass.newAddPayment Is Nothing Then
+            SingleFormClass.newAddPayment = New AddPaymentForm
+        End If
+        SingleFormClass.newAddPayment.MdiParent = Me.MdiParent
+        SingleFormClass.newAddPayment.Show()
+        SingleFormClass.newAddPayment.Focus()
+    End Sub
+
+    Private Sub btnCustomersList_Click(sender As Object, e As EventArgs) Handles btnCustomersList.Click
+        If SingleFormClass.customerListForm Is Nothing Then
+            SingleFormClass.customerListForm = New CustomersList
+        End If
+        SingleFormClass.customerListForm.MdiParent = Me.MdiParent
+        SingleFormClass.customerListForm.Show()
+        SingleFormClass.customerListForm.Focus()
+    End Sub
+
+    Private Sub btnAR_Click(sender As Object, e As EventArgs) Handles btnAR.Click
+        If SingleFormClass.addAR Is Nothing Then
+            SingleFormClass.addAR = New AddAccountsReceivable
+        End If
+        SingleFormClass.addAR.MdiParent = Me.MdiParent
+        SingleFormClass.addAR.Show()
+        SingleFormClass.addAR.Focus()
     End Sub
 End Class

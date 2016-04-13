@@ -52,7 +52,7 @@ Partial Public Class UsersDataClassesDataContext
   #End Region
 	
 	Public Sub New()
-		MyBase.New(Global.SNFxp.My.MySettings.Default.snfdbxpConnectionString1, mappingSource)
+		MyBase.New(Global.SNFxp.My.MySettings.Default.Setting, mappingSource)
 		OnCreated
 	End Sub
 	

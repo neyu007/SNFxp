@@ -53,6 +53,8 @@ Partial Class Home
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnAR = New System.Windows.Forms.Button()
+        Me.btnPayment = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -351,7 +353,9 @@ Partial Class Home
         Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.btnAR)
         Me.Panel3.Controls.Add(Me.btnFindInvoice)
+        Me.Panel3.Controls.Add(Me.btnPayment)
         Me.Panel3.Controls.Add(Me.btnNewInvoice)
         Me.Panel3.Location = New System.Drawing.Point(255, 106)
         Me.Panel3.Name = "Panel3"
@@ -367,6 +371,24 @@ Partial Class Home
         Me.Label3.Size = New System.Drawing.Size(102, 16)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Sales Invoice"
+        '
+        'btnAR
+        '
+        Me.btnAR.Location = New System.Drawing.Point(103, 66)
+        Me.btnAR.Name = "btnAR"
+        Me.btnAR.Size = New System.Drawing.Size(75, 32)
+        Me.btnAR.TabIndex = 0
+        Me.btnAR.Text = "Add A/R"
+        Me.btnAR.UseVisualStyleBackColor = True
+        '
+        'btnPayment
+        '
+        Me.btnPayment.Location = New System.Drawing.Point(13, 66)
+        Me.btnPayment.Name = "btnPayment"
+        Me.btnPayment.Size = New System.Drawing.Size(84, 32)
+        Me.btnPayment.TabIndex = 0
+        Me.btnPayment.Text = "Add Payment"
+        Me.btnPayment.UseVisualStyleBackColor = True
         '
         'Panel4
         '
@@ -510,7 +532,7 @@ Partial Class Home
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = Global.SNFxp.My.Resources.Resources.SNF_Logo
+        Me.PictureBox1.Image = Global.SNFxp.My.Resources.Resources.snficon
         Me.PictureBox1.Location = New System.Drawing.Point(347, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(62, 27)
@@ -597,4 +619,6 @@ Partial Class Home
     Friend WithEvents tbBranchName As System.Windows.Forms.TextBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents btnLogout As System.Windows.Forms.Button
+    Friend WithEvents btnAR As System.Windows.Forms.Button
+    Friend WithEvents btnPayment As System.Windows.Forms.Button
 End Class

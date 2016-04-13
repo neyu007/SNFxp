@@ -81,8 +81,12 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -97,6 +101,8 @@
     <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
   <ItemGroup>
+    <Import Include="Microsoft.Reporting" />
+    <Import Include="Microsoft.Reporting.WinForms" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
@@ -109,6 +115,24 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountsReceivableDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountsReceivableDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsReceivableModule.vb" />
+    <Compile Include="AddAccountsReceivable.Designer.vb">
+      <DependentUpon>AddAccountsReceivable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddAccountsReceivable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPaymentForm.Designer.vb">
+      <DependentUpon>AddPaymentForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddPaymentForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="BranchForm.Designer.vb">
       <DependentUpon>BranchForm.vb</DependentUpon>
@@ -122,6 +146,7 @@
     <Compile Include="BranchNewForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomerModule.vb" />
     <Compile Include="CustomersDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +154,18 @@
     </Compile>
     <Compile Include="CustomersDataSet.vb">
       <DependentUpon>CustomersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomersList.Designer.vb">
+      <DependentUpon>CustomersList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomersList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatasetTest.Designer.vb">
+      <DependentUpon>DatasetTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatasetTest.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="DepartmentNewForm.Designer.vb">
       <DependentUpon>DepartmentNewForm.vb</DependentUpon>
@@ -387,11 +424,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddAccountsReceivable.resx">
+      <DependentUpon>AddAccountsReceivable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPaymentForm.resx">
+      <DependentUpon>AddPaymentForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BranchForm.resx">
       <DependentUpon>BranchForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BranchNewForm.resx">
       <DependentUpon>BranchNewForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomersList.resx">
+      <DependentUpon>CustomersList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatasetTest.resx">
+      <DependentUpon>DatasetTest.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepartmentNewForm.resx">
       <DependentUpon>DepartmentNewForm.vb</DependentUpon>
@@ -463,7 +512,10 @@
       <DependentUpon>ProductListForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
-    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="ReportSalesPerProd.resx">
       <DependentUpon>ReportSalesPerProd.vb</DependentUpon>
     </EmbeddedResource>
@@ -480,6 +532,17 @@
     <EmbeddedResource Include="UserNewForm.resx">
       <DependentUpon>UserNewForm.vb</DependentUpon>
     </EmbeddedResource>
+    <None Include="AccountsReceivableDataSet.xsc">
+      <DependentUpon>AccountsReceivableDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AccountsReceivableDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccountsReceivableDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AccountsReceivableDataSet.xss">
+      <DependentUpon>AccountsReceivableDataSet.xsd</DependentUpon>
+    </None>
     <None Include="CustomersDataSet.xsc">
       <DependentUpon>CustomersDataSet.xsd</DependentUpon>
     </None>
@@ -668,6 +731,11 @@
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.11.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Report Viewer 2012 Runtime</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">

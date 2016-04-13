@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="snfdbxp" Class="UsersDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=snfdbxp;User ID=NeYu" SettingsObjectName="SNFxp.My.MySettings" SettingsPropertyName="snfdbxpConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu" SettingsObjectName="SNFxp.My.MySettings" SettingsPropertyName="Setting" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Roles" Member="Roles">
     <Type Name="Role">
       <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

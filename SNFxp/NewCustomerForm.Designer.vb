@@ -283,6 +283,7 @@ Partial Class NewCustomerForm
         '
         'btnSaveClose
         '
+        Me.btnSaveClose.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnSaveClose.Location = New System.Drawing.Point(542, 235)
         Me.btnSaveClose.Name = "btnSaveClose"
         Me.btnSaveClose.Size = New System.Drawing.Size(104, 36)
