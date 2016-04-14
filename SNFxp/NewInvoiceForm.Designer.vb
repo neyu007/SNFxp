@@ -39,6 +39,7 @@ Partial Class NewInvoiceForm
         Dim TotalDiscountLabel As System.Windows.Forms.Label
         Dim BOAmountLabel As System.Windows.Forms.Label
         Dim TotalInvoiceAmountLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewInvoiceForm))
         Me.InvoiceDataSet = New SNFxp.InvoiceDataSet()
         Me.SalesInvoiceInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SalesInvoiceInfoTableAdapter = New SNFxp.InvoiceDataSetTableAdapters.SalesInvoiceInfoTableAdapter()
@@ -669,6 +670,7 @@ Partial Class NewInvoiceForm
         Me.Controls.Add(Me.BOAmountTextBox)
         Me.Controls.Add(TotalInvoiceAmountLabel)
         Me.Controls.Add(Me.TotalInvoiceAmountTextBox)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "NewInvoiceForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sales Invoice"

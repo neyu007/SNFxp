@@ -5,26 +5,26 @@
     <Setting Name="Setting" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=SNFSERVER-PC;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu</Value>
+      <Value Profile="(Default)">Data Source=SNFSERVER-PC;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu</Value>
     </Setting>
     <Setting Name="snfdbxpConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=SNFSERVER-PC;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu</Value>
+      <Value Profile="(Default)">Data Source=SNFSERVER-PC;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu</Value>
     </Setting>
     <Setting Name="snfdbxpConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=SNFSERVER-PC;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu</Value>
+      <Value Profile="(Default)">Data Source=SNFSERVER-PC;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu</Value>
     </Setting>
   </Settings>
 </SettingsFile>

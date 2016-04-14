@@ -57,8 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminn"& _ 
-            "eyu")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SNFSERVER-PC;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu")>  _
         Public ReadOnly Property Setting() As String
             Get
                 Return CType(Me("Setting"),String)
@@ -68,8 +67,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminn"& _ 
-            "eyu")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SNFSERVER-PC;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu")>  _
         Public ReadOnly Property snfdbxpConnectionString() As String
             Get
                 Return CType(Me("snfdbxpConnectionString"),String)
@@ -79,8 +77,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=neyu007.ddns.net;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminn"& _ 
-            "eyu")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SNFSERVER-PC;Initial Catalog=snfdbxp;User ID=NeYu;Password=adminneyu")>  _
         Public ReadOnly Property snfdbxpConnectionString1() As String
             Get
                 Return CType(Me("snfdbxpConnectionString1"),String)
